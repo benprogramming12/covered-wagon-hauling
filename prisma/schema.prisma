@@ -24,16 +24,9 @@ model Quote {
   scheduledTime    String
   cargoDescription String
   cargoSize        String
-  notes               String?
-  paymentPreference   String  @default("deposit")
-  paymentToken        String?  @unique
-}
-
-model BlockedDate {
-  id        String   @id @default(cuid())
-  date      String   @unique
-  reason    String?
-  createdAt DateTime @default(now())
+  notes             String?
+  paymentPreference String  @default("deposit")
+  paymentToken      String? @unique
 
   // Pricing & status
   // Status: pending | quoted | deposit_paid | in_progress | completed | cancelled
@@ -49,4 +42,11 @@ model BlockedDate {
   balancePaid            Boolean @default(false)
   depositAmount          Float?
   balanceAmount          Float?
+}
+
+model BlockedDate {
+  id        String   @id @default(cuid())
+  date      String   @unique
+  reason    String?
+  createdAt DateTime @default(now())
 }
