@@ -3,21 +3,16 @@ import { prisma } from "@/lib/db";
 
 export async function GET() {
   const [quotes, blocked] = await Promise.all([
-    prisma.quote.findMany({
-      select: { scheduledDate: true, scheduledTime: true, status: true },
-    }),
-    prisma.blockedDate.findMany({
-      select: { date: true, reason: true },
-    }),
+    prisma.quote.findMany(),
+    prisma.blockedDate.findMany(),
   ]);
 
-  const activeQuotes = quotes.filter((q) =>
-    ["deposit_paid", "quoted", "in_progress"].includes(q.status)
-  );
-
+  const activeStatuses = ["deposit_paid", "quoted", "in_progress"];
   const bookingCounts: Record<string, number> = {};
-  for (const q of activeQuotes) {
-    bookingCounts[q.scheduledDate] = (bookingCounts[q.scheduledDate] ?? 0) + 1;
+  for (const q of quotes) {
+    if (activeStatuses.includes(q.status)) {
+      bookingCounts[q.scheduledDate] = (bookingCounts[q.scheduledDate] ?? 0) + 1;
+    }
   }
 
   return NextResponse.json({
