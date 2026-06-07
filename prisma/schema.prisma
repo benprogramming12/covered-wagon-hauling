@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Quote {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Customer
+  name  String
+  email String
+  phone String
+
+  // Job details
+  pickupAddress    String
+  dropoffAddress   String
+  scheduledDate    String
+  scheduledTime    String
+  cargoDescription String
+  cargoSize        String
+  notes               String?
+  paymentPreference   String  @default("deposit")
+  paymentToken        String?  @unique
+}
+
+model BlockedDate {
+  id        String   @id @default(cuid())
+  date      String   @unique
+  reason    String?
+  createdAt DateTime @default(now())
+
+  // Pricing & status
+  // Status: pending | quoted | deposit_paid | in_progress | completed | cancelled
+  status String @default("pending")
+  price  Float?
+
+  // Stripe
+  stripeCustomerId       String?
+  stripePaymentMethodId  String?
+  depositPaymentIntentId String?
+  balancePaymentIntentId String?
+  depositPaid            Boolean @default(false)
+  balancePaid            Boolean @default(false)
+  depositAmount          Float?
+  balanceAmount          Float?
+}
