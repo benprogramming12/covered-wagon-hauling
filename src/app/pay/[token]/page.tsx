@@ -3,14 +3,12 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import PayButton from "./PayButton";
 
-export default async function PayPage({ params }: { params: { token: string } }) {
-  const quote = await prisma.quote.findUnique({
-    where: { paymentToken: params.token },
-  });
+export default async function PayPage({ params }: { params: Promise<{ token: string }> }) {
+  const { token } = await params;
+  const quote = await prisma.quote.findUnique({ where: { paymentToken: token } });
 
   if (!quote || !quote.price) notFound();
 
-  // Already fully paid
   if (quote.balancePaid) {
     return (
       <div className="min-h-screen bg-brand-cream flex items-center justify-center px-4">
@@ -23,7 +21,6 @@ export default async function PayPage({ params }: { params: { token: string } })
     );
   }
 
-  // Deposit already paid — show balance info
   if (quote.depositPaid) {
     return (
       <div className="min-h-screen bg-brand-cream flex items-center justify-center px-4">
@@ -46,14 +43,12 @@ export default async function PayPage({ params }: { params: { token: string } })
   return (
     <div className="min-h-screen bg-brand-cream flex items-center justify-center px-4 py-12">
       <div className="bg-white rounded-2xl shadow-xl p-8 max-w-lg w-full border border-brand-gold/20">
-        {/* Header */}
         <div className="text-center mb-8">
           <Image src="/logo.png" alt="Covered Wagon Hauling LLC" width={80} height={80} className="mx-auto mb-3" />
           <h1 className="font-display text-2xl font-bold text-brand-brown">Confirm Your Booking</h1>
           <p className="text-brand-brown/60 text-sm mt-1">Covered Wagon Hauling LLC</p>
         </div>
 
-        {/* Job summary */}
         <div className="bg-brand-cream rounded-xl p-5 mb-6 space-y-2 text-sm border border-brand-gold/20">
           <h2 className="font-bold text-brand-brown mb-3">Your Job Details</h2>
           <Row label="Name" value={quote.name} />
@@ -64,7 +59,6 @@ export default async function PayPage({ params }: { params: { token: string } })
           <Row label="Cargo" value={quote.cargoDescription} />
         </div>
 
-        {/* Price breakdown */}
         <div className="border border-brand-gold/30 rounded-xl p-5 mb-6">
           <div className="flex justify-between text-brand-brown mb-2">
             <span>Total job price</span>
@@ -80,7 +74,6 @@ export default async function PayPage({ params }: { params: { token: string } })
           </div>
         </div>
 
-        {/* Pay button */}
         <PayButton quoteId={quote.id} depositAmount={quote.depositAmount!} />
 
         <p className="text-center text-xs text-brand-brown/40 mt-4">
