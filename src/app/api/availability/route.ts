@@ -4,19 +4,19 @@ import { prisma } from "@/lib/db";
 export async function GET() {
   const [quotes, blocked] = await Promise.all([
     prisma.quote.findMany({
-      where: {
-        status: { in: ["deposit_paid", "quoted", "in_progress"] as string[] },
-      },
-      select: { scheduledDate: true, scheduledTime: true },
+      select: { scheduledDate: true, scheduledTime: true, status: true },
     }),
     prisma.blockedDate.findMany({
       select: { date: true, reason: true },
     }),
   ]);
 
-  // Count bookings per date
+  const activeQuotes = quotes.filter((q) =>
+    ["deposit_paid", "quoted", "in_progress"].includes(q.status)
+  );
+
   const bookingCounts: Record<string, number> = {};
-  for (const q of quotes) {
+  for (const q of activeQuotes) {
     bookingCounts[q.scheduledDate] = (bookingCounts[q.scheduledDate] ?? 0) + 1;
   }
 
