@@ -5,7 +5,7 @@ export async function GET() {
   const [quotes, blocked] = await Promise.all([
     prisma.quote.findMany({
       where: {
-        status: { in: ["deposit_paid", "quoted", "in_progress"] },
+        status: { in: ["deposit_paid", "quoted", "in_progress"] as string[] },
       },
       select: { scheduledDate: true, scheduledTime: true },
     }),
