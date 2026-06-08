@@ -50,3 +50,18 @@ model BlockedDate {
   reason    String?
   createdAt DateTime @default(now())
 }
+
+model RecurringBlock {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  label       String
+  // Days of week: "0,1,2,3,4,5,6" (0=Sun, 6=Sat)
+  daysOfWeek  String
+  // Pattern: "weekly" | "biweekly" | "custom"
+  pattern     String   @default("weekly")
+  // For biweekly: which week does it start on (ISO date string)
+  startDate   String
+  // Optional end date
+  endDate     String?
+  active      Boolean  @default(true)
+}
