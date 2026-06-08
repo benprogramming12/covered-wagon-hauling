@@ -8,6 +8,7 @@ export async function middleware(req: NextRequest) {
   if (host === "coveredwagonhauling.com") {
     const url = req.nextUrl.clone();
     url.host = "www.coveredwagonhauling.com";
+    url.port = "";
     return NextResponse.redirect(url, 301);
   }
 
