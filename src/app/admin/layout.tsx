@@ -1,11 +1,15 @@
 import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession();
-  if (!session) redirect("/admin/login");
+
+  // Middleware handles unauthenticated redirects to /admin/login.
+  // The login page itself lives inside this layout, so skip the nav when no session.
+  if (!session) {
+    return <>{children}</>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
