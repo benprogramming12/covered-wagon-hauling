@@ -23,7 +23,7 @@ export default function PayButton({
       if (!res.ok) throw new Error(data.error);
       window.location.href = data.url;
     } catch {
-      toast.error("Something went wrong. Please call us at 248.259.1036");
+      toast.error("Something went wrong. Please call us at 248.807.9772");
       setLoading(false);
     }
   }

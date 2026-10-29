@@ -34,7 +34,7 @@ export default async function PayPage({ params }: { params: Promise<{ token: str
             <p><strong>Remaining balance:</strong> ${quote.balanceAmount?.toFixed(2)}</p>
             <p className="text-brand-brown/60 mt-1">Collected on delivery.</p>
           </div>
-          <p className="text-brand-brown/50 text-sm">Questions? Call us at <a href="tel:+12482591036" className="text-brand-gold font-bold">248.259.1036</a></p>
+          <p className="text-brand-brown/50 text-sm">Questions? Call us at <a href="tel:+12488079772" className="text-brand-gold font-bold">248.807.9772</a></p>
         </div>
       </div>
     );
@@ -78,7 +78,7 @@ export default async function PayPage({ params }: { params: Promise<{ token: str
 
         <p className="text-center text-xs text-brand-brown/40 mt-4">
           Payments secured by Stripe. Your card details are never stored by us.<br />
-          Questions? Call <a href="tel:+12482591036" className="text-brand-gold">248.259.1036</a>
+          Questions? Call <a href="tel:+12488079772" className="text-brand-gold">248.807.9772</a>
         </p>
       </div>
     </div>

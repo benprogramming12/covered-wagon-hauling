@@ -86,8 +86,8 @@ export default function AboutPage() {
         <h2 className="font-display text-3xl font-bold text-brand-gold mb-3">Ready to Work Together?</h2>
         <p className="text-brand-gold-pale mb-6">Get a quote or call us directly — we respond fast.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+12482591036" className="bg-white text-brand-brown font-bold px-8 py-3 rounded-xl hover:bg-brand-cream transition-colors">
-            📞 248.259.1036
+          <a href="tel:+12488079772" className="bg-white text-brand-brown font-bold px-8 py-3 rounded-xl hover:bg-brand-cream transition-colors">
+            📞 248.807.9772
           </a>
           <Link href="/quote" className="bg-brand-gold text-brand-brown-dark font-bold px-8 py-3 rounded-xl hover:bg-brand-gold-light transition-colors">
             Request a Quote

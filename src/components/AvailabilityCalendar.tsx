@@ -185,8 +185,8 @@ export default function AvailabilityCalendar() {
               <div>
                 <p className="text-brand-brown/70 mb-4">Weekends are available by request. Call or submit a quote and we&apos;ll confirm.</p>
                 <div className="flex gap-3 flex-wrap">
-                  <a href="tel:+12482591036" className="bg-brand-gold text-brand-brown-dark font-bold px-6 py-2 rounded-xl hover:bg-brand-gold-light transition-colors">
-                    📞 Call 248.259.1036
+                  <a href="tel:+12488079772" className="bg-brand-gold text-brand-brown-dark font-bold px-6 py-2 rounded-xl hover:bg-brand-gold-light transition-colors">
+                    📞 Call 248.807.9772
                   </a>
                   <Link href="/quote" className="border-2 border-brand-gold text-brand-gold font-bold px-6 py-2 rounded-xl hover:bg-brand-gold hover:text-brand-brown-dark transition-colors">
                     Request a Quote
@@ -207,7 +207,7 @@ export default function AvailabilityCalendar() {
                 </Link>
               </div>
             );
-            if (status === "busy") return <p className="text-red-600">This date is fully booked. Please select another date or call us at <a href="tel:+12482591036" className="font-bold underline">248.259.1036</a>.</p>;
+            if (status === "busy") return <p className="text-red-600">This date is fully booked. Please select another date or call us at <a href="tel:+12488079772" className="font-bold underline">248.807.9772</a>.</p>;
             if (status === "blocked") return <p className="text-gray-500">Not available on this date. Please select another day.</p>;
             return null;
           })()}
@@ -221,8 +221,8 @@ export default function AvailabilityCalendar() {
           <Link href="/quote" className="bg-brand-gold text-brand-brown-dark font-bold px-8 py-3 rounded-xl hover:bg-brand-gold-light transition-colors">
             Request a Quote
           </Link>
-          <a href="tel:+12482591036" className="border-2 border-brand-gold text-brand-gold font-bold px-8 py-3 rounded-xl hover:bg-brand-gold hover:text-brand-brown-dark transition-colors">
-            📞 248.259.1036
+          <a href="tel:+12488079772" className="border-2 border-brand-gold text-brand-gold font-bold px-8 py-3 rounded-xl hover:bg-brand-gold hover:text-brand-brown-dark transition-colors">
+            📞 248.807.9772
           </a>
         </div>
       </div>

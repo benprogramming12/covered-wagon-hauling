@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const PHONE = "248.259.1036";
-const PHONE_HREF = "tel:+12482591036";
+const PHONE = "248.807.9772";
+const PHONE_HREF = "tel:+12488079772";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);

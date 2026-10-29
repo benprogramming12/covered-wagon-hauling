@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <h3 className="text-brand-gold font-display font-bold text-lg mb-2">Covered Wagon Hauling LLC</h3>
           <p className="text-sm text-brand-gold-pale/70 mb-3">Commercial cargo van delivery — skids, freight, and same-day runs up to 1 ton.</p>
-          <a href="tel:+12482591036" className="text-brand-gold font-bold text-lg hover:text-brand-gold-light transition-colors">📞 248.259.1036</a>
+          <a href="tel:+12488079772" className="text-brand-gold font-bold text-lg hover:text-brand-gold-light transition-colors">📞 248.807.9772</a>
           <p className="text-xs text-brand-gold-pale/40 mt-2">USDOT #5332573 · MC #834147</p>
         </div>
         <div>

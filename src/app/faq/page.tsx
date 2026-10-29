@@ -7,7 +7,7 @@ import Link from "next/link";
 const faqs = [
   {
     q: "What areas do you service?",
-    a: "We primarily serve the Metro Detroit area and surrounding Southeast Michigan counties. Not sure if we cover your area? Give us a call at 248.259.1036 and we'll let you know.",
+    a: "We primarily serve the Metro Detroit area and surrounding Southeast Michigan counties. Not sure if we cover your area? Give us a call at 248.807.9772 and we'll let you know.",
   },
   {
     q: "How much can you haul?",
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "Can I set up a regular delivery route or recurring account?",
-    a: "Absolutely. If you need regular scheduled runs — daily, weekly, or on-demand — we'd love to work out a commercial account arrangement. Call us at 248.259.1036 to discuss.",
+    a: "Absolutely. If you need regular scheduled runs — daily, weekly, or on-demand — we'd love to work out a commercial account arrangement. Call us at 248.807.9772 to discuss.",
   },
 ];
 
@@ -85,8 +85,8 @@ export default function FAQPage() {
           <h2 className="font-display font-bold text-2xl text-brand-gold mb-3">Still have questions?</h2>
           <p className="text-brand-gold-pale mb-6">Call us directly — we&apos;re happy to talk through your job before you commit to anything.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+12482591036" className="bg-brand-gold text-brand-brown-dark font-bold px-8 py-3 rounded-xl hover:bg-brand-gold-light transition-colors">
-              📞 248.259.1036
+            <a href="tel:+12488079772" className="bg-brand-gold text-brand-brown-dark font-bold px-8 py-3 rounded-xl hover:bg-brand-gold-light transition-colors">
+              📞 248.807.9772
             </a>
             <Link href="/quote" className="border-2 border-brand-gold text-brand-gold font-bold px-8 py-3 rounded-xl hover:bg-brand-gold hover:text-brand-brown-dark transition-colors">
               Request a Quote
