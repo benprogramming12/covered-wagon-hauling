@@ -48,9 +48,9 @@ export default function HomePage() {
               <Link href="/quote" className="bg-brand-gold text-brand-brown-dark font-bold text-lg px-8 py-4 rounded-xl hover:bg-brand-gold-light transition-colors shadow-lg">
                 Get a Free Quote
               </Link>
-              <Link href="/services" className="border-2 border-brand-gold text-brand-gold font-bold text-lg px-8 py-4 rounded-xl hover:bg-brand-gold hover:text-brand-brown-dark transition-colors">
-                Our Services
-              </Link>
+              <a href="tel:+12488079772" className="border-2 border-brand-gold text-brand-gold font-bold text-lg px-8 py-4 rounded-xl hover:bg-brand-gold hover:text-brand-brown-dark transition-colors text-center">
+                📞 Call Now
+              </a>
             </div>
           </div>
           <div className="flex-shrink-0">
@@ -148,9 +148,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <p className="text-center text-brand-brown/40 text-xs mt-6">
-          DOT and MC numbers available upon request.
-        </p>
       </section>
 
       {/* CTA banner */}
