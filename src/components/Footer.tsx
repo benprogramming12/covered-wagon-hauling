@@ -30,6 +30,9 @@ export default function Footer() {
       </div>
       <div className="text-center text-xs text-brand-gold-pale/40 mt-8">
         © {new Date().getFullYear()} Covered Wagon Hauling LLC. All rights reserved.
+        <span className="ml-4">
+          <Link href="/admin/login" className="hover:text-brand-gold-pale/60 transition-colors">Admin</Link>
+        </span>
       </div>
     </footer>
   );
